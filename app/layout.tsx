@@ -5,9 +5,6 @@ import { headers } from "next/headers";
 import "./globals.css";
 import { LanguageProvider } from "@/components/i18n/LanguageProvider";
 
-const siteIconDark =
-  "https://eiz.hr/mainevent/wp-content/uploads/2026/02/MEsmallLogoBlack.png";
-
 export const metadata: Metadata = {
   title: {
     default: "Main Event",
@@ -15,11 +12,6 @@ export const metadata: Metadata = {
   },
   description:
     "Premium entertainment and event production based in Split, Croatia.",
-  icons: {
-    icon: siteIconDark,
-    shortcut: siteIconDark,
-    apple: siteIconDark,
-  },
 };
 
 export default async function RootLayout({
@@ -33,6 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
