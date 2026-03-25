@@ -41,6 +41,9 @@ export function JournalHomeSection({
 
   useEffect(() => {
     function handleTldr(e: Event) {
+      if (e.type === "touchend") {
+        e.preventDefault();
+      }
       e.preventDefault();
       e.stopPropagation();
       const btn = e.currentTarget as HTMLButtonElement;
@@ -187,9 +190,11 @@ export function JournalHomeSection({
                     <button
                       type="button"
                       className="journal-page-tldr-button"
-                      aria-label="Show description"
+                      aria-label={
+                        lang === "hr" ? "Prikaži pregled" : "Show overview"
+                      }
                     >
-                      TLDR
+                      {lang === "hr" ? "Pregled" : "Overview"}
                     </button>
                   </>
                 ) : null}

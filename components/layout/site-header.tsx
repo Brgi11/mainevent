@@ -115,7 +115,7 @@ export function SiteHeader() {
             type="button"
             className="hamburger"
             id="hamburger"
-            aria-label="Open menu"
+            aria-label={lang === "hr" ? "Otvori izbornik" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((o) => !o)}
           >
@@ -131,9 +131,10 @@ export function SiteHeader() {
         <button
           type="button"
           className="close"
+          aria-label={lang === "hr" ? "Zatvori izbornik" : "Close menu"}
           onClick={() => setMobileOpen(false)}
         >
-          close.
+          {lang === "hr" ? "zatvori." : "close."}
         </button>
         <Link href="/artists" onClick={() => setMobileOpen(false)}>
           {lang === "hr" ? "izvođači." : "artists."}

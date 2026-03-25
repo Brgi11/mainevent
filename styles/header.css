@@ -88,7 +88,13 @@ header.top .menu-item:hover .arrow {
 header.top .language-switch {
   border-left-color: rgba(144, 122, 97, 0.3);
 }
-header.top .lang-button,
+/* Lang toggles on transparent header: inactive #907a61, active same tone as nav links */
+header.top .menu .lang-button:not(.active) {
+  color: #907a61;
+}
+header.top .menu .lang-button.active {
+  color: #c0b5ac;
+}
 header.top .lang-separator {
   color: #907a61;
 }
@@ -238,6 +244,14 @@ header.scrolled .logo-dark {
   cursor: pointer;
   color: #1f201b;
   font-family: "EB Garamond", serif;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .mobile-menu {
@@ -273,10 +287,24 @@ header.scrolled .logo-dark {
 }
 
 .mobile-menu .close {
+  display: block;
+  width: 100%;
   font-size: 18px;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  font-weight: 500;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.15em;
+  color: #1f201b;
+  text-align: left;
+  margin: 0 0 40px;
+  padding: 0 0 20px;
+  border: none;
   border-bottom: 1px solid rgba(31, 32, 27, 0.2);
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 1.4;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Language Switch */
@@ -289,6 +317,11 @@ header.scrolled .logo-dark {
   border-left: 1px solid rgba(144, 122, 97, 0.2);
 }
 
+/* Inactive lang on light bar (overrides .menu button #1f201b) */
+.menu .lang-button:not(.active) {
+  color: #907a61;
+}
+
 .lang-button {
   background: none;
   border: none;
@@ -299,18 +332,13 @@ header.scrolled .logo-dark {
   padding: 4px 8px;
   font-family: "EB Garamond", serif;
   letter-spacing: 0.1em;
-  transition: opacity 0.3s ease;
-  opacity: 0.6;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
 
 .lang-button.active {
-  opacity: 1;
   font-weight: 600;
   color: #1f201b;
-}
-
-.lang-button:hover {
-  opacity: 1;
 }
 
 .lang-separator {

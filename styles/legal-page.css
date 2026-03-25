@@ -1,0 +1,141 @@
+/* Legal pages (privacy, cookies, terms) – matches about-us tone */
+.legal-page-section {
+  padding: 5rem 2rem 6rem;
+  background-color: #f1ede9;
+}
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.75rem;
+  font-family: "EB Garamond", serif;
+}
+
+.legal-updated {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #907a61;
+  margin: 0 0 3rem;
+  font-family: "EB Garamond", serif;
+}
+
+.legal-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.legal-block {
+  padding-bottom: 2.75rem;
+  border-bottom: 1px solid rgba(144, 122, 97, 0.12);
+}
+
+.legal-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-block-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+  font-family: "EB Garamond", serif;
+}
+
+.legal-p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.75;
+  margin: 0 0 1rem;
+  font-family: "EB Garamond", serif;
+  opacity: 0.95;
+}
+
+.legal-p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.legal-list li {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.65;
+  padding: 0.3rem 0 0.3rem 1.25rem;
+  position: relative;
+  font-family: "EB Garamond", serif;
+  opacity: 0.95;
+}
+
+.legal-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 4px;
+  height: 4px;
+  background-color: #1f201b;
+  opacity: 0.45;
+}
+
+.legal-contact {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #1f201b;
+  font-family: "EB Garamond", serif;
+  margin: 0;
+}
+
+.legal-contact a {
+  color: #1f201b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-contact a:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .legal-page-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .legal-title {
+    font-size: 2rem;
+  }
+
+  .legal-block-title {
+    font-size: 1.2rem;
+  }
+
+  .legal-p,
+  .legal-list li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-page-section {
+    padding: 3.5rem 1rem 4rem;
+  }
+
+  .legal-title {
+    font-size: 1.75rem;
+  }
+}

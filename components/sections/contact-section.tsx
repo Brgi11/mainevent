@@ -80,7 +80,7 @@ export function ContactSection() {
             <p className="contact-description">
               {lang === "hr"
                 ? "Kontaktirajte nas kako bismo razgovarali o vašem događaju. Ovdje smo da vašu viziju pretvorimo u stvarnost."
-                : "Get in touch with us to discuss your event. We&apos;re here to help bring your vision to life."}
+                : "Get in touch with us to discuss your event. We're here to help bring your vision to life."}
             </p>
           </div>
           <div className="contact-address-block">

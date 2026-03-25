@@ -31,17 +31,10 @@ export function ArtistsHomeGrid({ artists }: { artists: ArtistCardModel[] }) {
       observer.observe(card);
     });
 
-    function onCardClick(e: MouseEvent) {
-      const target = e.target as HTMLElement;
-      if (
-        target.closest(".artist-tldr-button") ||
-        target.closest(".artist-description-overlay")
-      ) {
+    function handleTldr(e: Event) {
+      if (e.type === "touchend") {
         e.preventDefault();
       }
-    }
-
-    function handleTldr(e: Event) {
       e.preventDefault();
       e.stopPropagation();
       const btn = e.currentTarget as HTMLButtonElement;
@@ -64,17 +57,20 @@ export function ArtistsHomeGrid({ artists }: { artists: ArtistCardModel[] }) {
       }
     }
 
-    cards.forEach((card) => card.addEventListener("click", onCardClick));
-    document
-      .querySelectorAll(".artists-section .artist-tldr-button")
-      .forEach((button) => {
-        button.addEventListener("click", handleTldr);
-        button.addEventListener("touchend", handleTldr);
-      });
+    const tldrButtons = document.querySelectorAll(
+      ".artists-section .artist-tldr-button"
+    );
+    tldrButtons.forEach((button) => {
+      button.addEventListener("click", handleTldr);
+      button.addEventListener("touchend", handleTldr, { passive: false });
+    });
 
     return () => {
       observer.disconnect();
-      cards.forEach((card) => card.removeEventListener("click", onCardClick));
+      tldrButtons.forEach((button) => {
+        button.removeEventListener("click", handleTldr);
+        button.removeEventListener("touchend", handleTldr);
+      });
     };
   }, [artists]);
 
@@ -109,9 +105,11 @@ export function ArtistsHomeGrid({ artists }: { artists: ArtistCardModel[] }) {
                       <button
                         type="button"
                         className="artist-tldr-button"
-                        aria-label="Show description"
+                        aria-label={
+                          lang === "hr" ? "Prikaži pregled" : "Show overview"
+                        }
                       >
-                        TLDR
+                        {lang === "hr" ? "Pregled" : "Overview"}
                       </button>
                     </>
                   ) : null}

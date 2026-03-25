@@ -76,6 +76,9 @@ export function ArtistsArchiveClient({
 
   useEffect(() => {
     function handleTldr(e: Event) {
+      if (e.type === "touchend") {
+        e.preventDefault();
+      }
       e.preventDefault();
       (e as Event).stopPropagation();
       const btn = e.currentTarget as HTMLButtonElement;
@@ -264,9 +267,11 @@ export function ArtistsArchiveClient({
                         <button
                           type="button"
                           className="artist-page-tldr-button"
-                          aria-label="Show description"
+                          aria-label={
+                            isHr ? "Prikaži pregled" : "Show overview"
+                          }
                         >
-                          TLDR
+                          {isHr ? "Pregled" : "Overview"}
                         </button>
                       </>
                     ) : null}

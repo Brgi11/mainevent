@@ -51,11 +51,15 @@ export function SiteFooter() {
       <div className="footer-bottom">
         <span>© 2025 Main Event. All rights reserved.</span>
         <div className="legal">
-          <a href="#">
+          <Link href="/privacy-policy">
             {isHr ? "Politika privatnosti" : "Privacy Policy"}
-          </a>
-          <a href="#">{isHr ? "Politika kolačića" : "Cookie Policy"}</a>
-          <a href="#">{isHr ? "Uvjeti korištenja" : "Terms of Use"}</a>
+          </Link>
+          <Link href="/cookie-policy">
+            {isHr ? "Politika kolačića" : "Cookie Policy"}
+          </Link>
+          <Link href="/terms-of-use">
+            {isHr ? "Uvjeti korištenja" : "Terms of Use"}
+          </Link>
         </div>
       </div>
     </footer>
