@@ -1,0 +1,40 @@
+@import "../styles/header.css";
+@import "../styles/footer.css";
+
+:root {
+  --site-content-max: 1200px;
+  /* Fixed header offset (slightly under full bar height for tighter title spacing) */
+  --site-header-height: 108px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --site-header-height: 90px;
+  }
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Utility: optional alignment for CMS HTML blocks */
+.wp-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+main.site-main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Offset fixed header on all routes except home (hero sits under the bar) */
+body.inner-page main.site-main {
+  padding-top: var(--site-header-height);
+}

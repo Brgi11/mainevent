@@ -1,0 +1,69 @@
+/* How We Work Section – same look as services (dark bg, light text) */
+.how-we-work-section {
+  padding: 6rem 2rem;
+  background-color: #1f201b;
+  color: #f1ede9;
+}
+
+.how-we-work-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.how-we-work-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f1ede9;
+  letter-spacing: 1px;
+  font-family: "EB Garamond", serif;
+  margin: 0;
+  text-align: center;
+}
+
+.how-we-work-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.how-we-work-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #f1ede9;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+}
+
+@media (max-width: 1024px) {
+  .how-we-work-title {
+    font-size: 2.25rem;
+  }
+
+  .how-we-work-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-we-work-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .how-we-work-container {
+    gap: 2.5rem;
+  }
+
+  .how-we-work-title {
+    font-size: 2rem;
+  }
+
+  .how-we-work-text {
+    font-size: 1.25rem;
+  }
+}

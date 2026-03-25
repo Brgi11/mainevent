@@ -1,0 +1,373 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  background-color: #f1ede9;
+  color: #1f201b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Artists Section Styles */
+.artists-section {
+  padding: 6rem 2rem;
+  background-color: #f1ede9;
+}
+
+.artists-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+}
+
+.artists-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+  font-family: "EB Garamond", serif;
+}
+
+.artists-scroll-wrapper {
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(31, 32, 27, 0.3) transparent;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .artists-scroll-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .artists-grid {
+    scroll-snap-align: start;
+  }
+}
+
+.artists-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.artists-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.artists-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(31, 32, 27, 0.3);
+  border-radius: 4px;
+}
+
+.artists-grid {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  min-width: fit-content;
+  flex-wrap: nowrap;
+}
+
+.artist-card {
+  flex: 0 0 auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  border-radius: 0;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.artist-card:hover {
+  border-color: rgba(144, 122, 97, 0.65);
+  transform: translateY(-2px);
+}
+
+.artist-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 0;
+  position: relative;
+  background-color: #f1ede9;
+  transition: transform 0.2s ease;
+}
+
+.artist-card:hover .artist-image-wrapper {
+  transform: scale(1.01);
+}
+
+.artist-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.artist-card:hover .artist-image {
+  transform: scale(1.03);
+}
+
+/* Description overlay (hover text) – same as artists page */
+.artist-description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 32, 27, 0.85),
+    rgba(31, 32, 27, 0.9)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  padding: 1.5rem;
+  z-index: 5;
+}
+
+.artist-card:hover .artist-description-overlay {
+  opacity: 1;
+}
+
+.artist-description-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #f1ede9;
+  line-height: 1.6;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  max-width: 90%;
+}
+
+.artist-tldr-button {
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(31, 32, 27, 0.9);
+  color: #f1ede9;
+  border: 1px solid #f1ede9;
+  border-radius: 0;
+  font-family: "EB Garamond", serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s ease;
+}
+
+.artist-tldr-button:hover {
+  background-color: #1f201b;
+}
+
+.artist-tldr-button.active {
+  background-color: #f1ede9;
+  color: #1f201b;
+  border-color: #1f201b;
+}
+
+.artist-image-wrapper.mobile-description-active .artist-description-overlay {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 12;
+}
+
+@media (max-width: 768px) {
+  .artist-card:hover .artist-description-overlay {
+    opacity: 0 !important;
+  }
+
+  .artist-tldr-button {
+    display: block;
+  }
+}
+
+.artist-card-meta {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #907a61;
+  opacity: 0.9;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.artist-card:hover .artist-card-meta {
+  opacity: 1;
+}
+
+.artist-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.3px;
+  font-family: "EB Garamond", serif;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.artist-card:hover .artist-card-title {
+  color: rgba(31, 32, 27, 0.8);
+}
+
+.artists-link-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.artists-link {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f201b;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  cursor: pointer;
+  font-family: "EB Garamond", serif;
+}
+
+.artists-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+.artists-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .artists-grid {
+    gap: 1.5rem;
+  }
+
+  .artist-card {
+    width: 260px;
+    padding: 0.875rem;
+  }
+
+  .artist-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artists-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .artists-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .artists-scroll-wrapper {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .artists-grid {
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .artist-card {
+    width: 240px;
+    min-width: 240px;
+    padding: 0.75rem;
+  }
+
+  .artist-image-wrapper {
+    height: 250px;
+  }
+
+  .artist-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-section {
+    padding: 3rem 1rem;
+  }
+
+  .artists-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artists-scroll-wrapper {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .artists-grid {
+    gap: 1rem;
+  }
+
+  .artist-card {
+    width: 220px;
+    min-width: 220px;
+    padding: 0.5rem;
+  }
+
+  .artist-image-wrapper {
+    height: 220px;
+  }
+}

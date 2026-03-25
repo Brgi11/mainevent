@@ -1,0 +1,228 @@
+/* Sound page – production design (same as about us) */
+.prod-section {
+  padding: 5rem 2rem 6rem;
+  background-color: #f1ede9;
+}
+
+.prod-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.prod-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 3.5rem;
+  font-family: "EB Garamond", serif;
+}
+
+.prod-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.prod-block {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(144, 122, 97, 0.12);
+}
+
+.prod-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.prod-block-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem;
+  font-family: "EB Garamond", serif;
+}
+
+.prod-lead {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.75;
+  margin: 0 0 1.5rem;
+  font-family: "EB Garamond", serif;
+  opacity: 0.95;
+}
+
+.prod-block-how .prod-lead {
+  margin-bottom: 0;
+}
+
+.prod-close {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.7;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  opacity: 0.9;
+}
+
+/* Intro block – text left, image right */
+.prod-block-intro {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(144, 122, 97, 0.12);
+}
+
+.prod-intro-inner {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.prod-intro-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.prod-intro-headline {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f201b;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.02em;
+}
+
+.prod-intro-text .prod-lead {
+  margin-bottom: 0;
+}
+
+.prod-intro-image {
+  flex-shrink: 0;
+  width: 38%;
+  max-width: 300px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.prod-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bordered boxes – 2x2 default */
+.prod-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prod-boxes-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.prod-box {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.6;
+  padding: 1.25rem 1.25rem;
+  font-family: "EB Garamond", serif;
+  border: 1px solid rgba(144, 122, 97, 0.25);
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .prod-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .prod-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .prod-content {
+    gap: 3rem;
+  }
+
+  .prod-block {
+    padding-bottom: 3rem;
+  }
+
+  .prod-block-title {
+    font-size: 1.35rem;
+  }
+
+  .prod-lead {
+    font-size: 1.1rem;
+  }
+
+  .prod-intro-headline {
+    font-size: 1.25rem;
+  }
+
+  .prod-intro-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .prod-intro-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    order: -1;
+  }
+
+  .prod-intro-image img {
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  .prod-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-boxes-three {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-box {
+    font-size: 1.05rem;
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prod-section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .prod-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .prod-content {
+    gap: 2.5rem;
+  }
+
+  .prod-block {
+    padding-bottom: 2.5rem;
+  }
+
+  .prod-block-title {
+    font-size: 1.25rem;
+  }
+
+  .prod-box {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}

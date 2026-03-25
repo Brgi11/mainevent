@@ -1,0 +1,142 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  background-color: #f1ede9;
+  color: #1f201b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Partners Section Styles */
+.partners-section {
+  padding: 6rem 2rem;
+  background-color: #f1ede9;
+}
+
+.partners-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+}
+
+.partners-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+  font-family: "EB Garamond", serif;
+}
+
+.partners-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.partners-grid--top {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.partners-grid--bottom {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover {
+  border-color: rgba(31, 32, 27, 0.4);
+  box-shadow: 0 4px 12px rgba(31, 32, 27, 0.1);
+  transform: translateY(-2px);
+}
+
+.partner-image {
+  width: auto;
+  height: auto;
+  max-height: 80px;
+  max-width: 180px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.partner-item:hover .partner-image {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .partners-grid--top,
+  .partners-grid--bottom {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .partners-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .partners-grid--top,
+  .partners-grid--bottom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-item {
+    padding: 1.5rem;
+  }
+
+  .partner-image {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid--top,
+  .partners-grid--bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-item {
+    padding: 1.25rem;
+  }
+
+  .partner-image {
+    max-height: 50px;
+  }
+}

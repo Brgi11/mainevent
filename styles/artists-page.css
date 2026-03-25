@@ -1,0 +1,521 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  background-color: #f1ede9;
+  color: #1f201b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Artists Page Styles */
+.artists-page-section {
+  padding: 6rem 2rem;
+  padding-top: 4rem;
+  background-color: #f1ede9;
+  min-height: 100vh;
+}
+
+.artists-page-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+}
+
+.artists-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  font-family: "EB Garamond", serif;
+  text-align: left;
+}
+
+.artists-page-description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.8;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  font-family: "EB Garamond", serif;
+  max-width: 800px;
+}
+
+.artists-page-wp-notice {
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  background: rgba(31, 32, 27, 0.04);
+  max-width: 800px;
+}
+
+.artists-page-wp-notice-title {
+  font-family: "EB Garamond", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f201b;
+  margin-bottom: 0.5rem;
+}
+
+.artists-page-wp-notice-body {
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f201b;
+  opacity: 0.85;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.artists-page-wp-notice-detail {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(31, 32, 27, 0.06);
+  border: 1px solid rgba(144, 122, 97, 0.22);
+  color: #1f201b;
+}
+
+.artists-page-wp-notice-hint {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  font-family: "EB Garamond", serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #1f201b;
+  opacity: 0.88;
+}
+
+.artists-page-wp-notice-hint code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82em;
+  word-break: break-all;
+}
+
+.artists-page-wp-notice-cmd {
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.artists-filters {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #907a61;
+  opacity: 1;
+  font-family: "EB Garamond", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f201b;
+  background-color: #ffffff;
+  border: 1px solid #907a61;
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23907A61' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 3rem;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #907a61;
+}
+
+.artists-browse-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.artists-browse-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.artists-browse-filter {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(31, 32, 27, 0.35);
+  background: transparent;
+  color: #1f201b;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.artists-browse-filter:hover {
+  border-color: rgba(31, 32, 27, 0.55);
+}
+
+.artists-browse-filter-active {
+  background: #1f201b;
+  color: #f1ede9;
+  border-color: #1f201b;
+}
+
+.artists-browse-count {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
+  opacity: 0.65;
+  margin-bottom: 1.5rem;
+}
+
+.artists-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.artist-page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(144, 122, 97, 0.35);
+  border-radius: 0;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: calc(100% - 30px);
+  justify-self: center;
+}
+
+.artist-page-card:hover {
+  border-color: rgba(144, 122, 97, 0.65);
+  transform: translateY(-2px);
+}
+
+.artist-page-image-wrapper {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 0;
+  position: relative;
+  background-color: #f1ede9;
+  transition: transform 0.2s ease;
+}
+
+.artist-page-card:hover .artist-page-image-wrapper {
+  transform: scale(1.01);
+}
+
+.artist-page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.artist-page-card:hover .artist-page-image {
+  transform: scale(1.03);
+}
+
+/* Description Overlay - Desktop Hover */
+.artist-page-description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(31, 32, 27, 0.85),
+    rgba(31, 32, 27, 0.9)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  padding: 1.5rem;
+  z-index: 5;
+}
+
+.artist-page-card:hover .artist-page-description-overlay {
+  opacity: 1;
+}
+
+.artist-page-description-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #f1ede9;
+  line-height: 1.6;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  max-width: 90%;
+}
+
+/* Repeater post: bio overlay opacity on hover */
+.repeater-post .hoverDiv {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.repeater-post:hover .hoverDiv {
+  opacity: 1;
+}
+
+/* TLDR Button - Mobile Only */
+.artist-page-tldr-button {
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(31, 32, 27, 0.9);
+  color: #f1ede9;
+  border: 1px solid #f1ede9;
+  border-radius: 0;
+  font-family: "EB Garamond", serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s ease;
+}
+
+.artist-page-tldr-button:hover {
+  background-color: #1f201b;
+}
+
+.artist-page-tldr-button.active {
+  background-color: #f1ede9;
+  color: #1f201b;
+  border-color: #1f201b;
+}
+
+/* Mobile Description Overlay - Toggle */
+.artist-page-image-wrapper.mobile-description-active
+  .artist-page-description-overlay {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 12;
+}
+
+.artist-page-card-meta {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #907a61;
+  opacity: 0.9;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.artist-page-card:hover .artist-page-card-meta {
+  opacity: 0.8;
+}
+
+.artist-page-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.3px;
+  font-family: "EB Garamond", serif;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.artist-page-card:hover .artist-page-card-title {
+  color: rgba(31, 32, 27, 0.8);
+}
+
+.artist-page-card.hidden {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .artists-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .artist-page-card {
+    padding: 0.875rem;
+  }
+
+  .artist-page-image-wrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artists-page-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .artists-page-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .artists-page-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .artists-filters {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .artists-browse-toolbar {
+    margin-bottom: 0.5rem;
+  }
+
+  .artists-browse-count {
+    margin-bottom: 1.25rem;
+  }
+
+  .filter-select {
+    min-width: 100%;
+  }
+
+  .artists-page-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .artist-page-card {
+    padding: 0.75rem;
+  }
+
+  .artist-page-image-wrapper {
+    height: 300px;
+  }
+
+  .artist-page-card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Hide hover overlay on mobile, show button instead */
+  .artist-page-card:hover .artist-page-description-overlay {
+    opacity: 0 !important;
+  }
+
+  .artist-page-tldr-button {
+    display: block;
+  }
+
+  .artist-page-description-text {
+    font-size: 0.875rem;
+    padding: 0 1rem;
+  }
+
+  /* Ensure mobile overlay is visible when active */
+  .artist-page-image-wrapper.mobile-description-active
+    .artist-page-description-overlay {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: flex !important;
+  }
+
+  .artist-page-image-wrapper.mobile-description-active:hover
+    .artist-page-description-overlay {
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-page-section {
+    padding: 3rem 1rem;
+  }
+
+  .artists-page-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .artists-page-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artists-filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .artists-page-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .artist-page-card {
+    padding: 0.5rem;
+  }
+
+  .artist-page-image-wrapper {
+    height: 260px;
+  }
+
+  .artist-page-tldr-button {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .artist-page-description-text {
+    font-size: 0.8rem;
+    padding: 0 0.75rem;
+  }
+}

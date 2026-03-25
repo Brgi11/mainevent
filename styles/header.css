@@ -1,0 +1,356 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  background-color: #f1ede9;
+  color: #1f201b;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+
+header.top {
+  background: transparent;
+}
+
+header.scrolled {
+  background: rgba(241, 237, 233, 0.95);
+  backdrop-filter: blur(14px);
+}
+
+.nav {
+  max-width: var(--site-content-max, 1200px);
+  margin: auto;
+  padding: 22px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+}
+
+.logo img {
+  height: 80px;
+  transition: opacity 0.3s ease;
+}
+
+/* Transparent nav (top): light logo, light text */
+header.top .logo-light {
+  display: block;
+}
+header.top .logo-dark {
+  display: none;
+}
+header.top .menu a,
+header.top .menu button {
+  color: #c0b5ac;
+}
+header.top .menu a::after,
+header.top .menu button::after {
+  background-color: #c0b5ac;
+}
+header.top .menu-item .arrow {
+  border-top-color: #c0b5ac;
+}
+header.top .menu-item:hover .arrow {
+  border-top-color: rgba(192, 181, 172, 0.8);
+}
+header.top .language-switch {
+  border-left-color: rgba(144, 122, 97, 0.3);
+}
+header.top .lang-button,
+header.top .lang-separator {
+  color: #907a61;
+}
+header.top .hamburger {
+  color: #c0b5ac;
+}
+
+/* Transparent header: production/explore dropdown targets stay body text color */
+header.top .dropdown a,
+header.top .dropdown a:hover {
+  color: #1f201b;
+}
+
+/* Scrolled nav: dark logo, dark text (default) */
+header.scrolled .logo-light {
+  display: none;
+}
+header.scrolled .logo-dark {
+  display: block;
+}
+
+/* Inner pages (non-home): same as scrolled – light bg, dark logo, dark text (no .inner overrides) */
+
+.menu {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu a,
+.menu button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  color: #1f201b;
+  cursor: pointer;
+  padding: 0;
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu a::after,
+.menu button::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu button:hover::after {
+  width: 100%;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-item .arrow {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #1f201b;
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.3s ease, border-top-color 0.3s ease;
+  vertical-align: middle;
+}
+
+.menu-item:hover .arrow {
+  transform: translateY(2px);
+  border-top-color: rgba(31, 32, 27, 0.8);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 0;
+  background: rgba(241, 237, 233, 0.95);
+  backdrop-filter: blur(14px);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s ease;
+  min-width: 200px;
+  padding: 16px 24px;
+  border-radius: 0;
+  border: 1px solid rgba(31, 32, 27, 0.1);
+  box-shadow: 0 4px 12px rgba(31, 32, 27, 0.15);
+  z-index: 100;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 0;
+  color: #1f201b;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.dropdown a:hover {
+  opacity: 1;
+}
+
+.dropdown a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+.dropdown a:hover::after {
+  width: 100%;
+}
+
+.menu-item:hover .dropdown {
+  transform: scaleY(1);
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #1f201b;
+  font-family: "EB Garamond", serif;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  padding: 60px 40px;
+  transform: translateY(-100%);
+  transition: 0.5s ease;
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  transform: none;
+}
+
+.mobile-menu a {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 26px;
+  color: #1f201b;
+  text-decoration: none;
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #1f201b;
+  opacity: 0.8;
+}
+
+.mobile-menu .close {
+  font-size: 18px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(31, 32, 27, 0.2);
+}
+
+/* Language Switch */
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(144, 122, 97, 0.2);
+}
+
+.lang-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #907a61;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-family: "EB Garamond", serif;
+  letter-spacing: 0.1em;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.lang-button.active {
+  opacity: 1;
+  font-weight: 600;
+  color: #1f201b;
+}
+
+.lang-button:hover {
+  opacity: 1;
+}
+
+.lang-separator {
+  font-size: 14px;
+  color: #907a61;
+  opacity: 0.4;
+  font-family: "EB Garamond", serif;
+}
+
+.mobile-language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(144, 122, 97, 0.2);
+}
+
+.mobile-language-switch .lang-button {
+  font-size: 18px;
+  padding: 6px 12px;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    padding: 22px 20px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .language-switch {
+    display: none;
+  }
+}

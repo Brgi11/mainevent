@@ -1,0 +1,144 @@
+/* Intro Section – light background, #1f201b text */
+.intro-section {
+  padding: 5rem 2rem;
+  background-color: #f1ede9;
+  color: #1f201b;
+}
+
+.intro-container {
+  max-width: var(--site-content-max, 1200px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.intro-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intro-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 1.5rem;
+}
+
+/* Same font and size as left .intro-text */
+.intro-right-title {
+  font-family: "EB Garamond", serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1f201b;
+  margin: 0;
+}
+
+.intro-right-text {
+  font-family: "EB Garamond", serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1f201b;
+  margin: 0;
+}
+
+.intro-right-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.intro-text {
+  font-family: "EB Garamond", serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1f201b;
+  margin: 0;
+}
+
+.intro-cta {
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  letter-spacing: 0.5px;
+  padding-bottom: 2px;
+  position: relative;
+  display: inline-block;
+  transition: opacity 0.25s ease;
+}
+
+.intro-cta:hover {
+  opacity: 0.8;
+}
+
+.intro-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f201b;
+  transition: width 0.3s ease;
+}
+
+.intro-cta:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .intro-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3rem;
+  }
+
+  .intro-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .intro-right-ctas {
+    justify-content: flex-start;
+  }
+
+  .intro-text {
+    font-size: 1.75rem;
+  }
+
+  .intro-right-title,
+  .intro-right-text {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 3rem 1rem;
+  }
+
+  .intro-container {
+    gap: 2.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.5rem;
+  }
+
+  .intro-right-title,
+  .intro-right-text {
+    font-size: 1.5rem;
+  }
+}

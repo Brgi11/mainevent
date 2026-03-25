@@ -1,0 +1,303 @@
+/* About Us Page – refined typography and layout */
+.about-us-section {
+  padding: 5rem 2rem 6rem;
+  background-color: #f1ede9;
+}
+
+.about-us-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-us-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 3.5rem;
+  font-family: "EB Garamond", serif;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.about-block {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(144, 122, 97, 0.12);
+}
+
+.about-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-block-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f201b;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem;
+  font-family: "EB Garamond", serif;
+}
+
+.about-lead {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.75;
+  margin: 0 0 1.5rem;
+  font-family: "EB Garamond", serif;
+  opacity: 0.95;
+}
+
+.about-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.about-list li {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.7;
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  position: relative;
+  font-family: "EB Garamond", serif;
+}
+
+.about-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 4px;
+  height: 4px;
+  background-color: #1f201b;
+  opacity: 0.5;
+}
+
+.about-tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1f201b;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+  font-family: "EB Garamond", serif;
+}
+
+.about-close {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.7;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  opacity: 0.9;
+}
+
+/* Our Story – text left, image right */
+.about-block-story .about-block-title {
+  margin-bottom: 1.5rem;
+}
+
+.about-story-inner {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.about-story-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-story-image {
+  flex-shrink: 0;
+  width: 42%;
+  max-width: 340px;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Approach – bordered boxes (values-style) */
+.about-approach-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-approach-item {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.6;
+  padding: 1.25rem 1.25rem;
+  font-family: "EB Garamond", serif;
+  border: 1px solid rgba(144, 122, 97, 0.25);
+  background: transparent;
+}
+
+/* What defines us – normal background, 3 phrases in bordered boxes (same as approach) */
+.about-block-defines {
+  margin: 0;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(144, 122, 97, 0.12);
+}
+
+.about-block-defines .about-block-title {
+  color: #1f201b;
+  margin-bottom: 1.25rem;
+}
+
+.about-defines-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-defines-item {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.6;
+  padding: 1.25rem 1.25rem;
+  font-family: "EB Garamond", serif;
+  border: 1px solid rgba(144, 122, 97, 0.25);
+  background: transparent;
+}
+
+.about-phrase-accent {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f201b;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+}
+
+/* Where we work */
+.about-block-locations .about-block-title {
+  margin-bottom: 1rem;
+}
+
+.about-locations {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1f201b;
+  line-height: 1.7;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .about-us-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-us-content {
+    gap: 3rem;
+  }
+
+  .about-block {
+    padding-bottom: 3rem;
+  }
+
+  .about-block-title {
+    font-size: 1.35rem;
+  }
+
+  .about-lead {
+    font-size: 1.1rem;
+  }
+
+  .about-list li {
+    font-size: 1.05rem;
+  }
+
+  .about-story-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-story-image {
+    width: 100%;
+    max-width: 100%;
+    order: -1;
+  }
+
+  .about-approach-items {
+    grid-template-columns: 1fr;
+  }
+
+  .about-approach-item {
+    font-size: 1.05rem;
+    padding: 1rem 1rem;
+  }
+
+  .about-defines-items {
+    grid-template-columns: 1fr;
+  }
+
+  .about-defines-item {
+    font-size: 1.05rem;
+    padding: 1rem 1rem;
+  }
+
+  .about-phrase-accent {
+    font-size: 1.05rem;
+  }
+
+  .about-locations {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .about-us-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-us-content {
+    gap: 2.5rem;
+  }
+
+  .about-block {
+    padding-bottom: 2.5rem;
+  }
+
+  .about-block-title {
+    font-size: 1.25rem;
+  }
+
+  .about-approach-item {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .about-defines-item {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}

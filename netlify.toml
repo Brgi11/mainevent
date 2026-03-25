@@ -1,0 +1,7 @@
+# Repo root is this Next.js app. Set env vars in Netlify (not .env.local), then redeploy.
+
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
